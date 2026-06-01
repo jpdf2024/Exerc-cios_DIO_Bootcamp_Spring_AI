@@ -15,6 +15,9 @@ public class PetMachine {
             return;
         }
 
+        this.water -= 10;
+        this.shampoo -= 2;
+
         pet.setClean(true);
         System.out.println("O pet " + pet.getName() + " está limpo!");
 
@@ -49,15 +52,15 @@ public class PetMachine {
     }
 
     public boolean hasPet() {
-        return pet != null; //perguntando se tem um pet na máquina
+        return pet != null; // perguntando se tem um pet na máquina
     }
 
     public void setPet(Pet pet) {
-        if(!this.clean) {
+        if (!this.clean) {
             System.out.println("A máquina precisa ser limpa antes de adicionar um pet.");
             return;
         }
-        
+
         if (hasPet()) {
             System.out.println("Já há um pet na máquina. Remova o pet atual antes de adicionar outro.");
             return;
@@ -65,5 +68,10 @@ public class PetMachine {
         this.pet = pet;
     }
 
-    
+    public void removePet (){
+        this.clean = this.pet.isClean(); //verificando se o pet está limpo ou sujo para limpar a máquina
+        // se o pet estiver limpo, a máquina ficará limpa, caso contrário, a máquina ficará suja
+        this.pet = null; //removendo o pet da máquina
+    }
+
 }
