@@ -70,8 +70,15 @@ public class PetMachine {
 
     public void removePet (){
         this.clean = this.pet.isClean(); //verificando se o pet está limpo ou sujo para limpar a máquina
+        System.out.println("O pet " + this.pet.getName() + " foi removido da máquina. A máquina está " + (clean ? "limpa" : "suja") + ".");
         // se o pet estiver limpo, a máquina ficará limpa, caso contrário, a máquina ficará suja
         this.pet = null; //removendo o pet da máquina
     }
 
+    public void washMachine(){
+        this.water -= 10; //reabastecendo a água da máquina
+        this.shampoo -= 2; //reabastecendo o shampoo da máquina
+        this.clean = true; //limpando a máquina, alterando o estado para limpo
+        System.out.println("A máquina foi lavada e está limpa agora.");
+    }
 }
