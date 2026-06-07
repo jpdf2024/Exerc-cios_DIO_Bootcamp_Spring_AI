@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Main {
 
     private final static Scanner scanner = new Scanner(System.in);
+
+    private final static PetMachine petMachine = new PetMachine();
     public static void main (String[] args){
 
         var option = -1;
@@ -36,9 +38,15 @@ public class Main {
     }
 
     public static void setPetInPetMachine(){
-        System.out.println("Informe o nome do pet:");
-        var name = scanner.next();
+        var name = "";
+        while (name == null || name.isEmpty()) {
+            System.out.println("Informe o nome do pet:");
+            name = scanner.next();
+        }
+        
         var pet = new Pet(name);
+        petMachine.setPet(pet);
+        System.out.println("Pet " + pet.getName() + " adicionado na máquina de banho.");
     }
        
 }

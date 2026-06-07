@@ -1,10 +1,10 @@
 public class PetMachine {
 
-    private boolean clean;
+    private boolean clean = true; //  a máquina começa limpa, então o valor inicial é true para indicar que a máquina está limpa
 
-    private int water;
+    private int water = 30; // já que a máquina tem uma capacidade de 30 litros de água, o valor inicial é 30 para indicar que a máquina está cheia de água
 
-    private int shampoo;
+    private int shampoo = 10; // já que a máquina tem uma capacidade de 10 litros de shampoo, o valor inicial é 10 para indicar que a máquina está cheia de shampoo
 
     private Pet pet;
 
