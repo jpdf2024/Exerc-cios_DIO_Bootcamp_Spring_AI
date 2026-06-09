@@ -26,8 +26,16 @@ public class Main {
             option = scanner.nextInt();  
             
             switch (option) {
+                case 6:
+                    checkIfHasPetInMachine();
                 case 7:
                     setPetInPetMachine();
+                    break;
+                case 8:
+                    petMachine.removePet();
+                    break;  
+                case 9:
+                    petMachine.washMachine();
                     break;
             }
             
@@ -35,6 +43,11 @@ public class Main {
         
         } while (option != 0);
 
+    }
+
+    private static void checkIfHasPetInMachine() {
+        var hasPet = petMachine.hasPet();
+        System.out.println("A máquina tem um pet no banho: " + hasPet);
     }
 
     public static void setPetInPetMachine(){
@@ -48,5 +61,6 @@ public class Main {
         petMachine.setPet(pet);
         System.out.println("Pet " + pet.getName() + " adicionado na máquina de banho.");
     }
-       
+
+      
 }
