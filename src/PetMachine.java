@@ -69,6 +69,11 @@ public class PetMachine {
     }
 
     public void removePet (){
+        if (!hasPet()) {
+            System.out.println("Não há um pet na máquina para remover.");
+            return;
+        }
+
         this.clean = this.pet.isClean(); //verificando se o pet está limpo ou sujo para limpar a máquina
         System.out.println("O pet " + this.pet.getName() + " foi removido da máquina. A máquina está " + (clean ? "limpa" : "suja") + ".");
         // se o pet estiver limpo, a máquina ficará limpa, caso contrário, a máquina ficará suja
