@@ -24,6 +24,7 @@ public class Main {
             System.out.println("9 - Limpar a máquina");
             System.out.println("0 - Sair");
             option = scanner.nextInt();
+            scanner.nextLine();
 
             switch (option) {
                 case 1:
@@ -92,7 +93,7 @@ public class Main {
         var name = "";
         while (name == null || name.isEmpty()) {
             System.out.println("Informe o nome do pet:");
-            name = scanner.next();
+            name = scanner.nextLine();
         }
 
         var pet = new Pet(name);
